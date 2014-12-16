@@ -43,22 +43,13 @@
 .w90 { width: 90%; }
 .w100 { width: 100%; }
 
-.inpt:focus::-webkit-input-placeholder{
-   text-indent: -500px;
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
-
-.inpt:focus:-moz-placeholder { /* Firefox 18- */
-   text-indent: -500px;
-}
-
-.inpt:focus::-moz-placeholder {  /* Firefox 19+ */
-   text-indent: -500px;
-}
-
-.inpt:focus:-ms-input-placeholder {   
-   text-indent: -500px;
-}
-
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

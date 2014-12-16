@@ -1,36 +1,9 @@
-@import url(reset.css);
-@import url(reduction.less);
-@font-face {
-    font-family: 'icomoonregular';
-    src: url('../fonts/icomoon-webfont.eot');
-    src: url('../fonts/icomoon-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/icomoon-webfont.woff') format('woff'),
-         url('../fonts/icomoon-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-1: 'Open Sans', 'Arial', sans-serif;
-@font-2: 'icomoonregular';
-
-@c-color-1: #FFF;
-@c-color-2: #FFF;
-
-.clearfix {	
-	&:after {
-	   content: "";
-	   display: table;
-	   clear: both; 
-	}
-}
-
 html {
     min-height: 100%;
     overflow-y: scroll;
 }
 
 body{
-	min-width: 1000px;
 	line-height: normal;
 	font-family: @font-1;
 	font-size: 14px;
@@ -39,8 +12,11 @@ body{
 }
 
 section {
-	margin: 0 auto;
-	max-width: 960px;
+  margin: 0 auto;
+  max-width: 980px;
+
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 a {
@@ -87,29 +63,33 @@ h5 {
 /*Header
 ----------------------------------------------------------*/
 
-header {
+.header {
 	background: #F4F2F2;
-	border-bottom: 1px solid #DEDEDE;
+	border-bottom: 1px solid #ddd;
 
-	section	{
+	&__section	{
+	  outline: solid 1px red;
 		.clearfix;
-		padding-bottom: 25px;
+		padding-bottom: 27px;
 	}
 }
 
 .logo {
-	padding-top: 40px;
+	padding-top: 41px;
 	float: left;
 
 	a {
 		display: block;
 		width: 148px;
+		img {
+		  display: block;
+		}
 	}
 }
 
 .menu {
 	float: left;
-	margin-left: 25px;
+	margin-left: 26.5px;
 	margin-top: 48px;
 
 	li {
@@ -119,7 +99,7 @@ header {
 			text-decoration: none;
 			text-transform: uppercase;
 			color: #000;
-			padding: 0 15px;
+			padding: 0 14.5px;
 			display: block;
 		}
 	}
@@ -128,20 +108,27 @@ header {
 	li > a:hover {
 		color: #587beb;
 		
-		&:after {
+		/*&:after {
 			font-family: @font-2;
 			content: "\0022";
 			font-size: 15px;
 			display: inline-block;
-		}
+		}*/
 	}
 }
 
 .cart {
-	float: right;
-	background: #313131;
-	margin-top: 45px;
-	font-family: @font-2; 
+
+  float: right;
+
+  margin-top: 45px;
+
+  font-family: @font-2;
+
+  background: #313131;
+  border-radius: 2px;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
+
 }
 
 
@@ -152,12 +139,12 @@ header {
 /*Footer
 ----------------------------------------------------------*/
 
-footer {
+.footer {
 	background: #272930;
 
-	section {
-		padding: 40px 0 60px;
-		.clearfix;
+  	&__top {
+	  padding-top: 41px;
+	  padding-bottom: 21px;
 	}
 }
 
@@ -167,6 +154,9 @@ footer {
 	a {
 		display: block;
 		width: 120px;
+		img {
+		  display: block;
+		}
 	}
 }
 
@@ -190,7 +180,7 @@ footer {
 
 	.active > a,
 	li > a:hover {
-		color: #587beb;
+		color: #417cef;
 	}
 }
 
@@ -229,3 +219,8 @@ footer {
 	}
 }
 
+.copyright {
+  font-size: 12px;
+  color: #7e7e7e;
+  line-height: 98px;
+}

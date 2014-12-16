@@ -4,20 +4,20 @@
 		<meta charset="utf-8">
 		<title>Фотограм</title>
 		<link rel="icon" href="favicon.png" type="image/x-icon">
-		<link href="css/style.less"  rel="stylesheet/less">
+		<link href="css/base.less"  rel="stylesheet/less">
 		<script src="js/less-1.7.0.min.js" ></script>
 		<script src="js/jquery-1.7.1.min.js"></script>
 		<script src="js/scripts.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
 		<!--[if IE 8]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+			<script srcx§="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<![endif]-->
 	</head>
 <body>
 
-	<header>
-		<section>
+	<header class="header">
+		<section class="header__section">
 			<div class="logo">
 				<a href="/">
 					<img src="images/logo.png">
@@ -25,7 +25,7 @@
 			</div>
 			<nav class="menu">
 				<ul>
-					<li class="active"><a href="javascript:;">О нас</a></li>
+					<li><!-- class="active"--><a href="javascript:;">О нас</a></li>
 					<li><a href="javascript:;">Продукция</a></li>
 					<li><a href="javascript:;">Доставка</a></li>
 					<li><a href="javascript:;">Контакты</a></li>
@@ -37,26 +37,32 @@
 		</section>
 	</header>
 
-	<footer>
-		<section>
-			<div class="logo-min">
-				<a href="/">
-					<img src="images/logo-min.png">
-				</a>
-			</div>
-			<nav class="bottom-menu">
-				<ul>
-					<li><a href="javascript:;">О нас</a></li>
-					<li class="active"><a href="javascript:;">Продукция</a></li>
-					<li><a href="javascript:;">Доставка</a></li>
-					<li><a href="javascript:;">Контакты</a></li>
+	<footer class="footer">
+		<section class="footer__section">
+			<div class="footer__top clearfix">
+				<div class="logo-min">
+					<a href="/">
+						<img src="images/logo-min.png">
+					</a>
+				</div>
+				<nav class="bottom-menu">
+					<ul>
+						<li><a href="javascript:;">О нас</a></li>
+						<li class="active"><a href="javascript:;">Продукция</a></li>
+						<li><a href="javascript:;">Доставка</a></li>
+						<li><a href="javascript:;">Контакты</a></li>
+					</ul>
+				</nav>
+				<ul class="social">
+					<li><a href="javascript:;" class="vk"></a></li>
+					<li><a href="javascript:;" class="fb"></a></li>
+					<li><a href="javascript:;" class="tw"></a></li>
 				</ul>
-			</nav>
-			<ul class="social">
-				<li><a href="javascript:;" class="vk"></a></li>
-				<li><a href="javascript:;" class="fb"></a></li>
-				<li><a href="javascript:;" class="tw"></a></li>
-			</ul>
+			</div>
+			<div class="footer footer__bottom">
+				<div class="copyright">© 2014 </div>
+			</div>
+
 		</section>
 	</footer>
 
