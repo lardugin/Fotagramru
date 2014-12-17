@@ -5,7 +5,9 @@
 		<title>Фотограм</title>
 		<link rel="icon" href="favicon.png" type="image/x-icon">
 		<link href="css/base.less"  rel="stylesheet/less">
+		<script>less = { env: 'development'};</script>
 		<script src="js/less-1.7.0.min.js" ></script>
+		<script>less.watch();</script>
 		<script src="js/jquery-1.7.1.min.js"></script>
 		<script src="js/scripts.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
@@ -23,6 +25,9 @@
 					<img src="images/logo.png">
 				</a>
 			</div>
+			<div class="cart" data-icon="&#xe001;">
+				<div class="cart__count">0</div>
+			</div>
 			<nav class="menu">
 				<ul>
 					<li><!-- class="active"--><a href="javascript:;">О нас</a></li>
@@ -31,13 +36,10 @@
 					<li><a href="javascript:;">Контакты</a></li>
 				</ul>
 			</nav>
-			<div class="cart">
-				'/2713'
-			</div>
 		</section>
 	</header>
 
-	<footer class="footer">
+	<!--<footer class="footer">
 		<section class="footer__section">
 			<div class="footer__top clearfix">
 				<div class="logo-min">
@@ -64,7 +66,7 @@
 			</div>
 
 		</section>
-	</footer>
+	</footer>-->
 
 </body>
 </html>

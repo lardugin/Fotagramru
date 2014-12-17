@@ -14,6 +14,7 @@ body{
 section {
   margin: 0 auto;
   max-width: 980px;
+  min-width: 400px;
 
   padding-left: 10px;
   padding-right: 10px;
@@ -27,25 +28,7 @@ a {
 	}
 }
 
-h1 {
 
-}
-
-h2 {
-
-}
-
-h3 {
-
-}
-
-h4 {
-
-}
-
-h5 {
-
-}
 
 .pad {
 	padding: 0 20px;
@@ -59,168 +42,5 @@ h5 {
 	float: right;
 }
 
-
-/*Header
-----------------------------------------------------------*/
-
-.header {
-	background: #F4F2F2;
-	border-bottom: 1px solid #ddd;
-
-	&__section	{
-	  outline: solid 1px red;
-		.clearfix;
-		padding-bottom: 27px;
-	}
-}
-
-.logo {
-	padding-top: 41px;
-	float: left;
-
-	a {
-		display: block;
-		width: 148px;
-		img {
-		  display: block;
-		}
-	}
-}
-
-.menu {
-	float: left;
-	margin-left: 26.5px;
-	margin-top: 48px;
-
-	li {
-		display: inline-block;
-
-		> a {
-			text-decoration: none;
-			text-transform: uppercase;
-			color: #000;
-			padding: 0 14.5px;
-			display: block;
-		}
-	}
-
-	.active > a,
-	li > a:hover {
-		color: #587beb;
-		
-		/*&:after {
-			font-family: @font-2;
-			content: "\0022";
-			font-size: 15px;
-			display: inline-block;
-		}*/
-	}
-}
-
-.cart {
-
-  float: right;
-
-  margin-top: 45px;
-
-  font-family: @font-2;
-
-  background: #313131;
-  border-radius: 2px;
-  box-shadow: 0 0 1px 1px rgba(0,0,0,.15);
-
-}
-
-
-
-
-
-
 /*Footer
 ----------------------------------------------------------*/
-
-.footer {
-	background: #272930;
-
-  	&__top {
-	  padding-top: 41px;
-	  padding-bottom: 21px;
-	}
-}
-
-.logo-min {
-	float: left;
-
-	a {
-		display: block;
-		width: 120px;
-		img {
-		  display: block;
-		}
-	}
-}
-
-.bottom-menu {
-	float: left;
-	margin-left: 25px;
-	margin-top: 5px;
-
-	li {
-		display: inline-block;
-
-		> a {
-			text-decoration: none;
-			text-transform: uppercase;
-			color: #fff;
-			padding: 0 15px;
-			display: block;
-			font-size: 12px;
-		}
-	}
-
-	.active > a,
-	li > a:hover {
-		color: #417cef;
-	}
-}
-
-.social {
-	float: right;
-	font-size: 0;
-
-	li {
-		margin-left: 3px;
-		display: inline-block;
-
-		a {
-			width: 30px;
-			height: 30px;
-			display: inline-block;
-			background-image: url(../images/social-icon.png);
-			background-repeat: no-repeat;
-
-			&:hover {
-				opacity: 0.7;
-				.transition (.4s linear);
-			}
-		}
-
-		.vk {
-			background-position: 0px 0px;
-		}
-
-		.fb {
-			background-position: -33px 0px;
-		}
-
-		.tw {
-			background-position: -66px 0px;
-		}
-	}
-}
-
-.copyright {
-  font-size: 12px;
-  color: #7e7e7e;
-  line-height: 98px;
-}
