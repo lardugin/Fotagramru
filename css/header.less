@@ -8,8 +8,9 @@
 
   &__section  {
     .clearfix;
-    padding-bottom: 27px;
+    padding-bottom: 18px;
     position: relative;
+    z-index: 10;
   }
 }
 
@@ -54,13 +55,35 @@
         display: inline-block;
     }*/
   }
+
+  .submenu-trigger {
+    > a {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -45px;
+        left: 38%;
+        //left: -webkit-calc(50% - 7px);
+        //left: calc(50% - 7px);
+        display: none;
+        width: 0;
+        height: 0;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-bottom: 14px solid #F6F6F6;
+      }
+    }
+  }
 }
+
 
 .cart {
 
   float: right;
 
-  margin-top: 45px;
+  margin-top: 35px;
   padding: 3px 10px;
 
   font-family: @font-2;
@@ -98,9 +121,6 @@
     }
   }
 
-
-
-
   /*&:before {
     display: inline-block;
     font-family: @font-2;
@@ -110,30 +130,101 @@
 
 }
 
+@media( max-width: 690px ) {
+
+  .header {
+    &__section {
+      padding-bottom: 15px;
+    }
+  }
+
+  .logo {
+    margin-top: 20px;
+  }
+
+  .cart {
+    margin-top: 15px;
+  }
+
+  .menu {
+    /*outline: solid 1px red;*/
+
+    float: none;
+
+    margin: 0;
+
+    padding-top: 65px;
+
+    .submenu-trigger a:after {
+      bottom: -28px;
+    }
+
+    >ul {
+      display: table;
+      width: 100%;
+
+      >li {
+        /*outline: solid 1px red;*/
+
+        display: table-cell;
+        text-align: center;
+      }
+    }
+
+  }
+}
+
+@media( max-width: 420px ) {
+
+}
 
 
 /*Hover-menu
 ----------------------*/
+.header .submenu-trigger:hover {
+
+  .hover-area {
+    display: block;
+  }
+
+  .hover-menu {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-flow: row;
+    flex-flow: row;
+  }
+
+  >a:after {
+    display: block;
+  }
+}
+
+
+.hover-area {
+  position: absolute;
+  bottom: -150px;
+  left: -0px;
+  width: 100%;
+  height: 210px;
+  display: none;
+
+  z-index: -1;
+}
 
 .hover-menu {
   position: absolute;
   left: 0px;
-  top: 110px;
+  top: 113px;
   width: 100%;
   background: #F6F6F6;
   .box-shadow ( 0px 2px 5px 0px rgba(0, 0, 0, 0.3));
 
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -ms-flex-direction: row;
-  -ms-flex-wrap: wrap;
-  -webkit-flex-flow: row;
-  flex-flow: row;
-
-  //display: none;
+  display: none;
 
   ul {
     display: inline-block;
@@ -147,10 +238,13 @@
       padding: 0 0 0 3%;
       border-right: 1px solid #E8E8E8;
 
+      &:nth-of-type(3n) {
+        border-right: 0;
+      }
+
       &:hover {
         background: #E9E9E9;
       }
-
 
       a {
         color: #363636;
@@ -206,48 +300,55 @@
   }
 }
 
-@media( max-width: 690px ) {
 
-  .header {
-    &__section {
-      padding-bottom: 15px;
-    }
-  }
+@media( max-width: 800px ) {
 
-  .logo {
-    margin-top: 20px;
-  }
-
-  .cart {
-    margin-top: 25px;
-  }
-
-  .menu {
-    /*outline: solid 1px red;*/
-
-    float: none;
-
-    margin: 0;
-
-    padding-top: 65px;
-
+  .header .submenu-trigger:hover .hover-menu {
+    display: block;
 
     ul {
-      display: table;
+      display: block;
       width: 100%;
-
+      text-align: left;
     }
 
-    li {
-      /*outline: solid 1px red;*/
+    .promo {
+      width: 100%;
+      height: 120px;
+      display: block;
+      position: relative;
+      text-align: left;
+      padding: 20px 0;
 
-      display: table-cell;
-      text-align: center;
+      a {
+        width: 100%;
+
+        strong {
+          margin-left: 25px;
+        }
+
+        span {
+          margin-left: 20px;
+        }
+      }
     }
   }
 }
 
+@media( max-width: 600px ) {
 
-@media( max-width: 420px ) {
+  .header .submenu-trigger:hover .hover-menu {
 
+    ul {
+
+      li{
+        width: 50%;
+        border-right: 1px solid #E8E8E8 !important;
+
+        &:nth-of-type(2n) {
+         border-right: 0 !important;
+        }
+      }
+    }  
+  }
 }
