@@ -7,6 +7,8 @@ body{
 	line-height: normal;
 	font-family: @font-1;
 	font-size: 14px;
+	// font-size: 100%;
+	// line-height: 1.5em;
 	color: #000;
 	background:  #fff;
 }
@@ -77,5 +79,86 @@ a {
 
 
 
-/*Footer
+/*Button
 ----------------------------------------------------------*/
+
+.button-block {
+
+	section	{
+
+		padding: 30px 10px;
+	}
+}
+
+
+.button {
+	font-size: 16px;
+	padding: 14px 34px;
+
+	display: inline-block;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+	text-decoration: none;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.65);
+	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.15);
+
+	&:hover {
+		box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.32);
+	}
+
+	&:active {
+		box-shadow: inset 0px 2px 2px 0px rgba(0,0,0,0.34), 0px 1px 1px 0px rgba(0,0,0,0.15);
+	}
+}
+
+
+/*Green Button
+-----------------*/
+.grenn-btn {
+	background: #059356;
+	&:hover {
+		background: #00A25F;
+	}
+	&:active {
+		background: #057A49;
+	}
+}
+/*Blue Button
+-----------------*/
+.blue-btn {
+	background: #427CEF;
+	&:hover {
+		background: #3D8BFA;
+	}
+	&:active {
+		background: #4263E2;
+	}
+}
+/*Black Button
+-----------------*/
+.black-btn {
+	background: #40414D;
+	&:hover {
+		background: #3B5058;
+	}
+	&:active {
+		background: #402840;
+	}
+}
+
+
+
+
+.icon-box {
+	padding: 0 1em 0 0;
+	line-height: 3.1;
+	&:before {
+		display: inline-block;
+		margin-right: 0.5em;
+		width: 48px;
+		text-align: center;
+		background: rgba(0,0,0,0.1);
+	}
+}
