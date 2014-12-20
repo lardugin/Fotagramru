@@ -31,8 +31,6 @@ a {
 	}
 }
 
-
-
 .pad {
 	padding: 0 20px;
 }
@@ -59,7 +57,7 @@ a {
 
 .breadcrumbs {
 	list-style: decimal inside;
-	padding: 2.4em 0;
+	padding: 1.8em 0;
 	.clearfix;
 
 	li {
@@ -67,10 +65,21 @@ a {
 		text-transform: uppercase;
 		float: left;
 		color: #989898;
+		padding: 10px 0;
 	} 
 
 	.current {
 		color: #000;
+	}
+}
+
+@media( max-width: 690px ) {
+	.breadcrumbs {
+		padding: 0.8em 0;
+
+		li {
+			padding: 5px 0;
+		}
 	}
 }
 
@@ -169,8 +178,6 @@ a {
 		background: #2D2D2D;
 	}
 }
-
-
 
 .icon-box {
 	padding: 0 1em 0 0;
