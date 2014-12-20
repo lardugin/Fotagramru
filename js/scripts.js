@@ -4,7 +4,6 @@ $(document).ready(function(){
 
   $('.toggle-nav').on( 'click', function(){
 
-
     console.log('toggle-nav click');
 
     if ( !menu.hasClass('active-mobile-menu') ) {
@@ -22,7 +21,6 @@ $(document).ready(function(){
     }
 
   });
-
 
 
 });
