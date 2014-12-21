@@ -21,4 +21,10 @@ $(document).ready(function(){
 
   });
 
+  $('.submenu-trigger').hover(function(){
+    $('.curtain').addClass('curtain-active');
+  }, function() {
+    $('.curtain').removeClass('curtain-active');
+  })
+
 });
