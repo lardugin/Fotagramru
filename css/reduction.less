@@ -31,6 +31,28 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color-1', endColorstr='@color-2',GradientType=0 ); /* IE6-9 */
 }
 
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+}
+
+.inner-bsha (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+  -webkit-box-shadow: inset @arguments;
+  -moz-box-shadow: inset @arguments;
+  -ms-box-shadow: inset @arguments;
+  box-shadow: inset @arguments;
+}
+
 .w10 { width: 10%; }
 .w20 { width: 20%; }
 .w25 { width: 25%; }
