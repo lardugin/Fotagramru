@@ -3,7 +3,7 @@
   &__header {
 
     height: 93px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 
     .border-radius(4px, 0, 0, 4px);
     background-color: #f5f5f5;
@@ -13,9 +13,6 @@
   &__content {
 
     position: relative;
-    padding: 30px;
-
-    background-color: #ebebeb;
 
     &.overlay {
 
@@ -54,17 +51,26 @@
 }
 
 .upload-place-select {
+
+  padding: 30px;
   display: block;
+
+  background-color: #ebebeb;
+
   &.type_instagram,
   &.type_computer {
+
     display: none;
+
   }
 }
 
 .upload-dropdown {
 
+  position: relative;
   float: left;
 
+  width: 100%;
   height: 100%;
 
   &-holder {
@@ -127,7 +133,7 @@
 
   z-index: 2;
   position: absolute;
-  top: 0;
+  top: 100%;
   left: calc(12% / 2);
 
   width: 88%;
@@ -392,6 +398,105 @@
 
       font-size: 10px;
 
+    }
+
+  }
+
+}
+
+
+.uploaded-photo {
+
+  margin-top: 20px;
+
+  text-align: justify;
+
+  &:after {
+
+    width: 100%;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    content: '';
+    display: inline-block;
+
+  }
+
+  &__item {
+
+    position: relative;
+
+    box-sizing: border-box;
+    width: 31.54762%;
+    height: 100%;
+    max-height: 176px;
+    margin: 0 0 1.78571% 0;
+    display: inline-block;
+    overflow: hidden;
+
+    border: solid 1px #adadad;
+    background: #f5f5f5;
+    color: #8c8c8c;
+
+    img {
+
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: pointer;
+
+    }
+    
+    &.selected {
+      border: solid 4px #417cef;
+    }
+
+    &:after {
+
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      content: '';
+
+      width: 100%;
+      height: 100%;
+      display: block;
+
+      cursor: pointer;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, .7);
+      transition: ease all .2s;
+
+    }
+
+    &:before {
+      outline: solid 1px red;
+
+      z-index: 2;
+      float: left;
+
+
+      content: '\002B';
+      display: block;
+
+      font-family: @font-2;
+      font-size: 40px;
+      color: #fff;
+
+      background-position: 50% 50%;
+
+    }
+    
+    &:hover {
+
+      &:after {
+
+        opacity: 1;
+
+      }
+      
     }
 
   }
