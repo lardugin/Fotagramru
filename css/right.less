@@ -84,11 +84,42 @@
         left: 0;
         top: 50%;
       }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+      }
+
+      .edit-btn {
+        text-align: center;
+        background: transparent;
+        border: none;
+        border-radius: 100%;
+        width: 2.8em;
+        height: 2.8em;
+        line-height: 2.8;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        font-weight: bold;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+        .transition (box-shadow 0.25s);
+      }
     }
   }
 }
 
 .message {
+  //display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -213,5 +244,84 @@
       background: #31323A;
     }
 
+  }
+}
+
+@media( max-width: 840px ) {
+  .submit-btn-wrap {
+    .studio-add-cart {
+      //display: inline-block;
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+
+    .studio-go-cart {
+      //display: inline-block;
+      padding: 8px 5%;
+      .cart__count {
+        padding: 1px 7px 2px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media( max-width: 800px ) {
+  .submit-btn-wrap {
+    .studio-add-cart {
+      display: inline-block;
+    }
+
+    .studio-go-cart {
+      display: inline-block;
+    }
+  }
+}
+
+@media( max-width: 595px ) {
+  .submit-btn-wrap {
+    .studio-add-cart {
+      padding: 10px 15px;
+    }
+
+    .studio-go-cart .cart__count {
+      margin-left: 30px;
+
+      &:before {
+        left: -31px;
+      }
+    }
+  }
+
+  .product-option {
+    font-size: 12px;
+  }
+
+}
+
+@media( max-width: 540px ) {
+  .submit-btn-wrap {
+    .studio-add-cart {
+      padding: 10px 20px;
+      margin-bottom: 10px;
+    }
+
+    .studio-go-cart .cart__count {
+      margin-left: 40px;
+
+      &:before {
+        left: -40px;
+      }
+    }
+  }
+
+  .studio .message span {
+    font-size: 15px;
+  }
+}
+
+@media( max-width: 475px ) {
+  .product-option-description {
+    padding: 2.5% 2.5% 11%;
   }
 }
