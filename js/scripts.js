@@ -79,6 +79,58 @@ $(document).ready(function(){
     $('.curtain').addClass('curtain-active');
   }, function() {
     $('.curtain').removeClass('curtain-active');
-  })
+  });
+
+  $('.instagramm-toggle__link').on('click', function(){
+
+    $('.instagramm-toggle__link').removeClass('active');
+    $(this).addClass('active');
+
+    $('.images-list').hide();
+    $('.' + $(this).attr('data-class')).show();
+
+  });
+
+
+  var one = new CROP;
+  one.init(".default");
+  one.loadImg("images/test-img.jpg");
+  $("body").on("click", ".cropButton", function() {
+    $("canvas").remove();
+    $(".default").after('<canvas width="240" height="240" id="canvas"/>');
+    var e = document.getElementById("canvas").getContext("2d"),
+      t = new Image,
+      n = coordinates(one).w,
+      r = coordinates(one).h,
+      i = coordinates(one).x,
+      s = coordinates(one).y,
+      o = 240,
+      u = 240;
+    t.src = coordinates(one).image;
+    t.onload = function() {
+      e.drawImage(t, i, s, n, r, 0, 0, o, u);
+      $("canvas").addClass("output");/*.delay("4000").fadeOut("slow")*/
+      var url = canvas.toDataURL();
+      $('.test-img').attr('src', url);
+      $('.photo-editor').removeClass('show');
+
+
+    }
+  });
+
+
+
+  $('.edit-btn').on('click', function(){
+
+    $('.photo-editor').addClass('show');
+
+  });
+
+  $('.photo-editor-close').on('click', function(){
+
+    $('.photo-editor').removeClass('show');
+
+  });
+
 
 });

@@ -6,10 +6,12 @@
 		<title>Фотограм</title>
 		<link rel="icon" href="favicon.png" type="image/x-icon">
 		<link href="css/base.less"  rel="stylesheet/less">
+		<link href="css/crop.css"  rel="stylesheet">
 		<script>less = { env: 'development'};</script>
 		<script src="js/less-1.7.0.min.js" ></script>
 		<script>less.watch();</script>
 		<script src="js/jquery-1.7.1.min.js"></script>
+		<script src="js/crop.js"></script>
 		<script src="js/scripts.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
 		<!--[if IE 8]>
@@ -100,7 +102,7 @@
 								<div class="preview-carousel-slide">
 									<ul>
 										<li data-icon="&#x2b14">
-											<img src="images/test-img.jpg">
+											<img src="images/test-img.jpg" class="test-img">
 											<a href="javascript:;" data-icon="&#x270E" class="edit-btn"></a>
 										</li>
 										<li data-icon="&#x2b14"></li>
@@ -164,22 +166,27 @@
 
 					<div class="photo-editor">
 						<div class="photo-editor-head">
-							<a href="javascript:;" class="photo-editor-back" data-icon="&#x219C"></a>
+							<a href="javascript:;" class="photo-editor-back photo-editor-close" data-icon="&#x219C"></a>
 							<h3 class="photo-editor-title">Кадрирование и редактирование</h3>
 						</div>
 						<div class="studio-crop-next">
 							<div class="studio-crop-inner-next">
+
 								<div class="photo-editor-canvas-wrap">
 									<div class="photo-editor-canvas-inner">
 										<a href="javascript:;" class="delete-btn button red-btn" data-icon="&#x2715"></a>
-										<canvas width="306" height="306">
+										<div class="default">
+											<div class="cropMain"></div>
+											<div class="cropSlider"></div>
+											<div class="studio-button-group">
+												<a href="javascript:;" class="button cropButton green-stl">Готово</a>
+												<a href="javascript:;" class="button red-btn photo-editor-close">Отмена</a>
+											</div>
+										</div>
 									</div>
 								</div>
 								<div class="scale-slider-wrapper"></div>
-								<div class="studio-button-group">
-									<a href="javascript:;" class="button green-stl">Готово</a>
-									<a href="javascript:;" class="button red-btn">Отмена</a>
-								</div>
+
 							</div>
 						</div>
 					</div>
@@ -281,11 +288,11 @@
 					</div>
 
 					<div class="instagramm-toggle clearfix">
-						<div class="instagramm-toggle__item active">
-							<a class="instagramm-toggle__link" href="javascript:;">Мои фото</a>
+						<div class="instagramm-toggle__item ">
+							<a class="instagramm-toggle__link active" data-class="my-photos" href="javascript:;">Мои фото</a>
 						</div>
 						<div class="instagramm-toggle__item">
-							<a class="instagramm-toggle__link" href="javascript:;">Мои фото</a>
+							<a class="instagramm-toggle__link" data-class="followers" href="javascript:;">Followers</a>
 						</div>
 					</div>
 
@@ -299,87 +306,147 @@
 
 				<div class="upload-place__content">
 
-					<div class="uploaded-photo">
+					<div class="images-list my-photos">
 
-						<div class="uploaded-photo__item uploaded-photo__add-image" data-text="Добавить фото">
+						<div class="images-list__item images-list__add-image" data-text="Добавить фото">
 
 							<img src="./images/add-image.png" alt=""/>
 
 						</div>
 
-						<div class="uploaded-photo__item uploaded-photo__loading" data-text="Загружается...">
+						<div class="images-list__item images-list__loading" data-text="Загружается...">
 
 							<img src="./images/loading.png" alt=""/>
 
 						</div>
 
-						<div class="uploaded-photo__item selected">
+						<div class="images-list__item selected">
 
 							<img src="./images/uploaded-temp.jpg" alt=""/>
 
-							<a href="javascript:;" class="uploaded-photo__plus" >
-								<span class="uploaded-photo__plus-inner" data-icon="&#x002B"></span>
+							<a href="javascript:;" class="images-list__plus" >
+								<span class="images-list__plus-inner" data-icon="&#x002B"></span>
 							</a>
 
 						</div>
 
-						<div class="uploaded-photo__item">
+						<div class="images-list__item">
 
 							<img src="./images/uploaded-temp.jpg" alt=""/>
 
-							<a href="javascript:;" class="uploaded-photo__plus" >
-								<span class="uploaded-photo__plus-inner" data-icon="&#x002B"></span>
+							<a href="javascript:;" class="images-list__plus" >
+								<span class="images-list__plus-inner" data-icon="&#x002B"></span>
 							</a>
 
 						</div>
 
-						<div class="uploaded-photo__item">
+						<div class="images-list__item">
 
 							<img src="./images/uploaded-temp.jpg" alt=""/>
 
-							<a href="javascript:;" class="uploaded-photo__plus" >
-								<span class="uploaded-photo__plus-inner" data-icon="&#x002B"></span>
+							<a href="javascript:;" class="images-list__plus" >
+								<span class="images-list__plus-inner" data-icon="&#x002B"></span>
 							</a>
 
 						</div>
 
-						<div class="uploaded-photo__item">
+						<div class="images-list__item">
 
 							<img src="./images/uploaded-temp.jpg" alt=""/>
 
-							<a href="javascript:;" class="uploaded-photo__plus" >
-								<span class="uploaded-photo__plus-inner" data-icon="&#x002B"></span>
+							<a href="javascript:;" class="images-list__plus" >
+								<span class="images-list__plus-inner" data-icon="&#x002B"></span>
 							</a>
 
 						</div>
 
-						<div class="uploaded-photo__item">
+						<div class="images-list__item">
 
 							<img src="./images/uploaded-temp.jpg" alt=""/>
 
-							<a href="javascript:;" class="uploaded-photo__plus" >
-								<span class="uploaded-photo__plus-inner" data-icon="&#x002B"></span>
+							<a href="javascript:;" class="images-list__plus" >
+								<span class="images-list__plus-inner" data-icon="&#x002B"></span>
 							</a>
 
 						</div>
 
-						<div class="uploaded-photo__item">
+						<div class="images-list__item">
 
 							<img src="./images/uploaded-temp.jpg" alt=""/>
 
-							<a href="javascript:;" class="uploaded-photo__plus" >
-								<span class="uploaded-photo__plus-inner" data-icon="&#x002B"></span>
+							<a href="javascript:;" class="images-list__plus" >
+								<span class="images-list__plus-inner" data-icon="&#x002B"></span>
 							</a>
 
 						</div>
 
-						<div class="uploaded-photo__item">
+						<div class="images-list__item">
 
 							<img src="./images/uploaded-temp.jpg" alt=""/>
 
-							<a href="javascript:;" class="uploaded-photo__plus" >
-								<span class="uploaded-photo__plus-inner" data-icon="&#x002B"></span>
+							<a href="javascript:;" class="images-list__plus" >
+								<span class="images-list__plus-inner" data-icon="&#x002B"></span>
 							</a>
+
+						</div>
+
+					</div>
+
+					
+					
+					<div class="images-list followers">
+
+						<div class="images-list__item images-list__item_type_followers" data-text="Мои фото">
+
+							<img src="./images/uploaded-temp.jpg" alt=""/>
+
+						</div>
+
+						<div class="images-list__item images-list__item_type_followers" data-text="Мои фото">
+
+							<img src="./images/uploaded-temp.jpg" alt=""/>
+
+						</div>
+
+						<div class="images-list__item images-list__item_type_followers" data-text="Мои фото">
+
+							<img src="./images/uploaded-temp.jpg" alt=""/>
+
+						</div>
+
+						<div class="images-list__item images-list__item_type_followers" data-text="Мои фото">
+
+							<img src="./images/uploaded-temp.jpg" alt=""/>
+
+						</div>
+
+						<div class="images-list__item images-list__item_type_followers" data-text="Мои фото">
+
+							<img src="./images/uploaded-temp.jpg" alt=""/>
+
+						</div>
+
+						<div class="images-list__item images-list__item_type_followers" data-text="Мои фото">
+
+							<img src="./images/uploaded-temp.jpg" alt=""/>
+
+						</div>
+
+						<div class="images-list__item images-list__item_type_followers" data-text="Мои фото">
+
+							<img src="./images/uploaded-temp.jpg" alt=""/>
+
+						</div>
+
+						<div class="images-list__item images-list__item_type_followers" data-text="Мои фото">
+
+							<img src="./images/uploaded-temp.jpg" alt=""/>
+
+						</div>
+
+						<div class="images-list__item images-list__item_type_followers" data-text="Мои фото">
+
+							<img src="./images/uploaded-temp.jpg" alt=""/>
 
 						</div>
 
@@ -423,7 +490,7 @@
 		</section>
 	</footer>
 
-
 	<div class="curtain"></div>
+
 </body>
 </html>
