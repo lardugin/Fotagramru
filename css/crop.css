@@ -11,9 +11,7 @@
 
 .default .cropMain {
   box-sizing: border-box;
-  width:315px;
-  height:315px;
-  margin: 0 auto;
+  margin: 10% auto 6%;
 }
 
 
@@ -34,6 +32,8 @@
   position: relative;
 
   background-color: #0d0e10;
+  border: solid 8px #ebebeb;
+  
 }
 
 /*
@@ -74,7 +74,7 @@
 /*---------------------------------------------------------*/
 
 .cropSlider.noUi-target  {
-  width: 73%;
+  width: 100%;
   margin: 0px auto;
 }
 .cropSlider .noUi-target * {
@@ -89,7 +89,7 @@
   cursor:default
 }
 .cropSlider .noUi-base {
-  margin: 25px 10px;
+  margin: 25px 0;
   height: 7px;
   border-radius: 4px;
   background-color: #bbb;

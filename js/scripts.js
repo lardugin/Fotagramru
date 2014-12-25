@@ -133,4 +133,7 @@ $(document).ready(function(){
   });
 
 
+  $('.crop-container').outerHeight( $('.default').outerWidth() );
+
+
 });
