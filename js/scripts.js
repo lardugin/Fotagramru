@@ -92,31 +92,36 @@ $(document).ready(function(){
   });
 
 
-  var one = new CROP;
-  one.init(".default");
-  one.loadImg("images/test-img.jpg");
-  $("body").on("click", ".cropButton", function() {
-    $("canvas").remove();
-    $(".default").after('<canvas width="240" height="240" id="canvas"/>');
-    var e = document.getElementById("canvas").getContext("2d"),
-      t = new Image,
-      n = coordinates(one).w,
-      r = coordinates(one).h,
-      i = coordinates(one).x,
-      s = coordinates(one).y,
-      o = 240,
-      u = 240;
-    t.src = coordinates(one).image;
-    t.onload = function() {
-      e.drawImage(t, i, s, n, r, 0, 0, o, u);
-      $("canvas").addClass("output");/*.delay("4000").fadeOut("slow")*/
-      var url = canvas.toDataURL();
-      $('.test-img').attr('src', url);
-      $('.photo-editor').removeClass('show');
+  function crop() {
 
+    var one = new CROP;
+    one.init(".default");
+    one.loadImg("images/test-img.jpg");
+    $("body").on("click", ".cropButton", function() {
+      $("canvas").remove();
+      $(".default").after('<canvas width="240" height="240" id="canvas"/>');
+      var e = document.getElementById("canvas").getContext("2d"),
+        t = new Image,
+        n = coordinates(one).w,
+        r = coordinates(one).h,
+        i = coordinates(one).x,
+        s = coordinates(one).y,
+        o = 240,
+        u = 240;
+      t.src = coordinates(one).image;
+      t.onload = function() {
+        e.drawImage(t, i, s, n, r, 0, 0, o, u);
+        $("canvas").addClass("output");/*.delay("4000").fadeOut("slow")*/
+        var url = canvas.toDataURL();
+        $('.test-img').attr('src', url);
+        $('.photo-editor').removeClass('show');
 
-    }
-  });
+      }
+    });
+
+  }
+
+  crop();
 
 
 
@@ -133,7 +138,18 @@ $(document).ready(function(){
   });
 
 
-  $('.crop-container').outerHeight( $('.default').outerWidth() );
+  var cropContMainWidth = $('.default').outerWidth();
+  var cropContInner = $('.crop-container');
 
+  cropContInner.outerHeight( cropContMainWidth).outerWidth( cropContMainWidth );
+
+  $(window).resize( function(){
+
+    var cropContMainWidth = $('.default').outerWidth();
+    var cropContInner = $('.crop-container');
+
+    cropContInner.outerHeight( cropContMainWidth).outerWidth( cropContMainWidth );
+
+  });
 
 });
