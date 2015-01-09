@@ -132,7 +132,7 @@ var CROP = function() {
         r = n.s;
       n.s = e || n.s;
       t.css({
-        width: n.w * n.s,
+        width: n.w * n.s + 80,
         height: n.h * n.s + 80 //spike (+ 80) img max height
       });
       this.imgMove({
@@ -164,7 +164,7 @@ var CROP = function() {
       }
       t.css({
         top: i - 40, //spike (- 40) remove top offset from img
-        left: s
+        left: s - 40
       })
     };
     this.slider = function() {
