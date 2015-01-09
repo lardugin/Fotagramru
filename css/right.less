@@ -3,6 +3,11 @@
   background-color: #272930;
   border-radius: 4px;
   position: relative;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+  }
 }
 
 .product-option {
@@ -35,6 +40,7 @@
 
 
 .preview-top-bar {
+  display: none;
   position: relative;
   padding: 6.5% 3%;
   font-size: 16px;
@@ -55,7 +61,10 @@
   }
 }
 
+
+
 .preview-tool-bar {
+  display: none;
   width: 100%;
   padding: 0 25%;
   overflow: hidden;
@@ -77,6 +86,15 @@
   }
 }
 
+
+@media ( max-width: 440px ) {
+
+  .preview-tool-bar,
+  .preview-top-bar {
+    display: block;
+  }
+
+}
 
 .studio-preview-wrap {
   position: relative;
@@ -328,6 +346,15 @@
   top: 0;
   left: 0;
   text-decoration: none;
+
+  &:before {
+    display: block;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #3972b2;
+  }
 }
 
 .photo-editor-title {

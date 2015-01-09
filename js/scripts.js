@@ -169,4 +169,23 @@ $(document).ready(function(){
 
   $('.photos-required').text( $('.preview-carousel-slide li').length );
 
+
+
+  //fixed studio
+
+  $(window).scroll(function(){
+
+    if ( $(window).scrollTop() >= $('.content__right').offset().top ) {
+
+      $('.studio').addClass('fixed');
+
+    } else {
+
+      $('.studio').removeClass('fixed');
+
+    }
+
+  });
+
+
 });
