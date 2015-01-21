@@ -5,8 +5,8 @@
   position: relative;
 
   &.fixed {
-    //position: fixed;
-    //top: 0;
+    position: fixed;
+    top: 0;
   }
 }
 
@@ -529,6 +529,10 @@
 @media( max-width: 440px ) {
   .studio {
     border-radius: 0;
+
+    &.fixed {
+      position: inherit;
+    }
   }
 
   .product-option {

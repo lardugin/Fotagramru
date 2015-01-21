@@ -125,7 +125,7 @@ $(document).ready(function(){
 
 
 
-  $('.edit-btn').on('click', function(){
+  $('.edit').on('click', function(){
 
     $('.photo-editor').addClass('show');
 
