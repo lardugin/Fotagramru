@@ -22,8 +22,10 @@
 			<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<![endif]-->
 	</head>
-<body>
-
+<body class="preview-step">
+						<!-- Класс preview-step нужен для отображения меню редактирования правого блока при разрешении ниже 440 пикс.
+						http://prntscr.com/5ssexk - без класса
+						http://prntscr.com/5ssf78 - с классом -->
 	
 	<header class="header">
 		<section class="header__section">
@@ -105,7 +107,7 @@
 							<div class="preview-carousel-inner">
 								<div class="preview-carousel-slide">
 									<ul>
-										<li data-icon="&#x2b14">
+										<li data-icon="&#x2b14" class="edit">
 											<img src="images/test-img.jpg" class="test-img">
 											<a href="javascript:;" data-icon="&#x270E" class="edit-btn"></a>
 										</li>

@@ -53,6 +53,10 @@
     left: 3%;
     color: #797979;
     text-decoration: none;
+
+    &:hover {
+      color: #3972b2;
+    }
   }
 
   .preview-top-header {
@@ -84,16 +88,6 @@
       text-align: center;
     }
   }
-}
-
-
-@media ( max-width: 440px ) {
-
-  .preview-tool-bar,
-  .preview-top-bar {
-    display: block;
-  }
-
 }
 
 .studio-preview-wrap {
@@ -535,6 +529,10 @@
 @media( max-width: 440px ) {
   .studio {
     border-radius: 0;
+
+    &.fixed {
+      position: inherit;
+    }
   }
 
   .product-option {
@@ -609,5 +607,92 @@
   .submit-btn-wrap {
     display: none;
   }
+
+  .preview-top-bar .preview-top-header {
+    padding-left: 10%;
+  }
+
+  .studio-button-group .button {
+    font-size: 18px;
+  }
+
+
+
+  //body class
+  .preview-step {
+    .photos-selected-count,
+    .submit-btn-wrap,
+    .product-option {
+      display: none;
+    }
+    .preview-top-bar,
+    .preview-tool-bar {
+      display: block;
+    }
+
+    .studio-preview {
+      width: 100%;
+      margin: 0;
+      float: none;
+
+      .preview-carousel-slide ul li .edit-btn {
+        display: block;
+      }
+    }
+
+    .studio-preview-nav {
+      margin-top: 5%;
+    }
+
+    .studio-preview-nav-inner {
+      width: 100%;
+      float: none;
+      text-align: center;
+
+      a {
+        padding: 2% 4%;
+        font-size: 21px;
+      }
+    }
+  }
+
+  
 }
 
+@media( max-width: 400px ) {
+  .photo-editor-head {
+    .photo-editor-back {
+      font-size: 16px;
+      padding: 6.8% 4% 5.7%;
+    }
+    .photo-editor-title {
+      font-size: 16px;
+    }
+  }
+}
+
+@media( max-width: 370px ) {
+  .preview-top-bar .preview-top-header {
+    padding-left: 15%;
+  }
+
+  .preview-top-bar .preview-top-back {
+    top: 32%;
+  }
+
+  .photo-editor-head {
+    .photo-editor-back {
+      font-size: 15px;
+    }
+    .photo-editor-title {
+      font-size: 15px;
+      padding: 6% 0 6% 5%;
+    }
+  }
+}
+
+@media( max-width: 340px ) {
+  .preview-top-bar .preview-top-header {
+    padding-left: 25%;
+  }
+}
