@@ -173,15 +173,26 @@ $(document).ready(function(){
 
   //fixed studio
 
+  var studio = $('.studio');
+  var studioMaxTopOffset = $('.content').outerHeight() - studio.outerHeight() + $('.content').offset().top;
+
   $(window).scroll(function(){
 
-    if ( $(window).scrollTop() >= $('.content__right').offset().top ) {
+    var winScrollOffset = $(window).scrollTop();
 
-      $('.studio').addClass('fixed');
+    var studioTop =  winScrollOffset >= studioMaxTopOffset ? studioMaxTopOffset : winScrollOffset;
+
+    if ( winScrollOffset >= $('.content').offset().top ) {
+
+      studio
+        .addClass('fixed')
+        .css('top', studioTop + 'px');
+
+
 
     } else {
 
-      $('.studio').removeClass('fixed');
+      studio.removeClass('fixed').css('top',0);
 
     }
 
