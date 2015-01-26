@@ -126,7 +126,7 @@ $(document).ready(function(){
 
 
   $('.edit').on('click', function(){
-
+    console.log("1");
     $('.photo-editor').addClass('show');
 
   });
