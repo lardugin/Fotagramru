@@ -154,20 +154,44 @@ $(document).ready(function(){
 
 
 
-  $(".preview-carousel-inner").carouFredSel({
-    circular: false,
-    infinite: false,
-    auto 	: false,
-    mousewheel: true,
-    swipe		: {
-      onTouch		: true,
-      onMouse		: true
-    },
-    pagination	: ".studio-preview-nav-inner"
+  //carousel
+
+  var resizeTimer;
+  var carousel = $('.preview-carousel-inner');
+
+  function initCarousel() {
+
+    carousel.trigger('destroy', true);
+
+    carousel.carouFredSel({
+      circular: false,
+      infinite: false,
+      auto 	: false,
+      mousewheel: true,
+      swipe		: {
+        onTouch		: true,
+        onMouse		: true
+      },
+      pagination	: ".studio-preview-nav-inner"
+    });
+
+    $('.photos-required').text( $('.preview-carousel-slide li').length );
+
+  }
+
+  if ( carousel.length ){
+
+    initCarousel();
+
+  }
+
+  // reinit size on resize
+  $(window).resize( function(){
+
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(initCarousel, 100);
+
   });
-
-
-  $('.photos-required').text( $('.preview-carousel-slide li').length );
 
 
 
