@@ -177,6 +177,12 @@ $(document).ready(function(){
 
     $('.photos-required').text( $('.preview-carousel-slide li').length );
 
+    $('.caroufredsel_wrapper').outerWidth(
+      $('.content__right').outerWidth() -
+      ( parseInt( $('.studio-preview-wrap').css('padding-left') ) * 2 ) +
+      'px'
+    );
+
   }
 
   if ( carousel.length ){
