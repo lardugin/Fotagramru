@@ -11,7 +11,8 @@
 
 .default .cropMain {
   box-sizing: border-box;
-  margin: 10% auto 6%;
+  /*margin: 10% auto 6%;*/
+  margin: 10% auto 0%;
 }
 
 

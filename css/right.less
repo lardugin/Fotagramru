@@ -355,6 +355,36 @@
   }
 }
 
+.photo-help {
+  padding: 6.3% 4% 5.7%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+  cursor: pointer;  
+
+  span {
+    color: #fff;
+    font-size: 25px;
+    &:before {
+      display: block;
+    }
+  }
+
+  .photo-help-open {
+    
+    &:hover {
+      color: #3972b2;
+    }
+  }
+
+  .photo-help-close {
+    color: #d4004f;
+    display: none;
+  }
+
+}
+
 .photo-editor-title {
   padding: 6% 0;
   color: #fff;
@@ -388,10 +418,8 @@
 
 .default {
   position: relative;
-
   width: 67%;
   margin: 0 auto;
-
 }
 
 .photo-editor-canvas-inner {
@@ -445,5 +473,79 @@
     text-align: center;
     padding: 4% 10%;
   }
+}
 
+
+
+/*Polaroid-page  ---> cropInfo
+----------------------------------------------------------*/
+
+.cropInfo {
+  width: 100%;
+  margin: 0px auto;
+  background: #EBEBEB;
+  padding: 0 15px;
+  font-size: 12px;
+  position: relative;
+}
+
+.cropInfo-top {
+  height: 25px;
+  overflow: hidden;
+  padding-bottom: 5px;
+  
+  .cropInfo-date {
+    color: #848484;
+    font-weight: 600;
+    float: left;
+    width: 35%;
+    &:before {
+      margin-right: 5px;
+    }
+  }
+  .cropInfo-location {
+    text-align: right;
+    font-weight: 600;
+    color: #7d9aed;
+    float: right;
+    width: 65%;
+    &:before {
+      margin-right: 5px;
+    }
+  }
+}
+
+
+.cropInfo-coments {
+  padding-bottom: 25px;
+  overflow: hidden;
+  height: 75px;
+
+  p {
+    font-size: 12px;
+    color: #454547;
+  }
+}
+
+.cropInfo-tags {
+  position: absolute;
+  top: 0px;
+  left: -14%;
+  text-align: center;
+
+  span {
+    display: block;
+    color: #c0c0c0;
+    font-size: 18px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    
+    &:hover {
+      color: #7c99ed;
+    }
+  }
+
+  .active {
+    color: #5576df;
+  }
 }
