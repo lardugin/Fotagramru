@@ -92,41 +92,8 @@ $(document).ready(function(){
   });
 
 
-  function crop() {
-
-    var one = new CROP;
-    one.init(".default");
-    one.loadImg("images/test-img.jpg");
-    $("body").on("click", ".cropButton", function() {
-      $("canvas").remove();
-      $(".default").after('<canvas width="240" height="240" id="canvas"/>');
-      var e = document.getElementById("canvas").getContext("2d"),
-        t = new Image,
-        n = coordinates(one).w,
-        r = coordinates(one).h,
-        i = coordinates(one).x,
-        s = coordinates(one).y,
-        o = 240,
-        u = 240;
-      t.src = coordinates(one).image;
-      t.onload = function() {
-        e.drawImage(t, i, s, n, r, 0, 0, o, u);
-        $("canvas").addClass("output");/*.delay("4000").fadeOut("slow")*/
-        var url = canvas.toDataURL();
-        $('.test-img').attr('src', url);
-        $('.photo-editor').removeClass('show');
-
-      }
-    });
-
-  }
-
-  crop();
-
-
-
   $('.edit').on('click', function(){
-    console.log("1");
+
     $('.photo-editor').addClass('show');
 
   });
@@ -136,22 +103,6 @@ $(document).ready(function(){
     $('.photo-editor').removeClass('show');
 
   });
-
-
-  var cropContMainWidth = $('.default').outerWidth();
-  var cropContInner = $('.crop-container');
-
-  cropContInner.outerHeight( cropContMainWidth).outerWidth( cropContMainWidth );
-
-  $(window).resize( function(){
-
-    var cropContMainWidth = $('.default').outerWidth();
-    var cropContInner = $('.crop-container');
-
-    cropContInner.outerHeight( cropContMainWidth).outerWidth( cropContMainWidth );
-
-  });
-
 
 
   //carousel
@@ -227,6 +178,50 @@ $(document).ready(function(){
     }
 
   });
+
+
+  //crop image
+  var foo = new CROP();
+
+  foo.init({
+    container: '.default',
+    image: './images/test-img.jpg',
+    width: 300,
+    height: 300,
+    mask: false,
+    zoom: {
+      steps: 0.01,
+      min: 1,
+      max: 5
+    }
+
+  });
+
+  $("body").on("click", ".cropButton", function() {
+
+    var cropedImg = foo.data(300, 300, '.png').image;
+
+      $('.test-img').attr('src', cropedImg);
+      $('.photo-editor').removeClass('show');
+
+  });
+
+  // crop Image reinit size
+  var cropContMainWidth = $('.default').outerWidth();
+  var cropContInner = $('.crop-container');
+
+  cropContInner.outerHeight( cropContMainWidth).outerWidth( cropContMainWidth );
+
+  $(window).resize( function(){
+
+    var cropContMainWidth = $('.default').outerWidth();
+    var cropContInner = $('.crop-container');
+
+    cropContInner.outerHeight( cropContMainWidth).outerWidth( cropContMainWidth );
+
+  });
+
+
 
 
 });
