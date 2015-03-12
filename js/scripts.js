@@ -222,6 +222,10 @@ $(document).ready(function(){
   });
 
 
-
+  if ($('.photo-help').length){
+    $('.photo-help').bind('click', function(){
+      $('.photo-editor').toggleClass('help');
+    });
+  };
 
 });
